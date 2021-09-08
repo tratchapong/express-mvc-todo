@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo form</title>
+    <style>
+      body { margin: 0 auto; max-width: 800px; background: lightskyblue;}
+      ul {list-style: none; margin: 0; padding: 0;}
+      a {text-decoration: none;}
+      li {display: inline-block;padding: 5px; background: lightsteelblue;}
+      .done {
+        color: darkgreen;
+      }
+      td:first-child {
+        padding-right: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>EJS : TodoList</h1>
+    <nav>
+      <ul>
+        <li><a href="/todo">Home</a></li>
+        <li><a href="/todo/addForm">AddForm</a></li>
+      </ul>
+    </nav>
+    <hr>
+    <form action="/todo" method="POST">
+      <input type="text" name="list" />
+      <button>Add</button>
+    </form>
+    <br />
+
+    <table>
+      <% todo.forEach(x => { %>
+      <tr>
+        <td class=<%= x.status? 'done': '' %>  ><%= x.list %></td>
+        <td><a href="/todo/edit/<%= x.id %>">Edit</a></td>
+        <td><a href="/todo/delete/<%= x.id %>">Delete</a></td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
