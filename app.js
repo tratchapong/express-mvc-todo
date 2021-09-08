@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/todo", todoRouter);
 
 app.use((err, req, res, next) => {
+  // console.log(err)
   res.json({ msg: "Something Wrong", err });
 });
 
