@@ -28,9 +28,10 @@ class todoModel {
     return delItem
   }
 
-  static add = async (list) => {
+  static add = async (input) => {
+    let {list, dueDate} = input
     let data = await readFileJSON(dbs)
-    let newTodo = {id: uuid(), list, status: false}
+    let newTodo = {id: uuid(), list,dueDate, status: false}
     data.push(newTodo)
     await writeFileJSON(dbs, data)
     return newTodo

@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page : TodoList EJS</title>
-  <style>
-      body { margin: 0 auto; max-width: 800px; background: lightskyblue; color:orangered;}
-      ul {list-style: none; margin: 0; padding: 0;}
-      a {text-decoration: none; color:darkslateblue}
-      a:hover {color: deeppink}
-      li {display: inline-block;padding: 5px; background: lightsteelblue; color:whitesmoke}
-  </style>
+  <%- include ('./partials/head') %> 
 </head>
 <body>
-  <h1>EJS : TodoList</h1>
-  <nav>
-    <ul>
-      <li><a href="/todo">Home</a></li>
-      <li><a href="/todo/addForm">AddForm</a></li>
-    </ul>
-  </nav>
-  <hr>
+  <header>
+    <%- include('./partials/header')  %> 
+  </header>
   <h3>All Jobs: <%= all %> </h3>
   <h4>Done: <%= done %> </h4>
   <h4>UnDone: <%= undone %> </h4>
