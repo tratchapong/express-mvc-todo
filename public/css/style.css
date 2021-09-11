@@ -1,5 +1,18 @@
-body { margin: 0 auto; max-width: 800px; background: lightskyblue; color:orangered;}
-ul {list-style: none; margin: 0; padding: 0;}
+body { margin: 0 auto; max-width: 800px; background: lightskyblue; color: darkslategray;}
+
+.w-10 {width: 10%;}
+.w-20 {width: 20%;}
+.w-30 {width: 30%;}
+.w-40 {width: 40%;}
+.w-50 {width: 50%;}
+.w-60 {width: 60%;}
+.w-70 {width: 70%;}
+.w-80 {width: 80%;}
+.w-90 {width: 90%;}
+.w-100 {width: 100%;}
+
+
+/* ul {list-style: none; margin: 0; padding: 0;}
 a {text-decoration: none; color:darkslateblue}
 a:hover {color: deeppink}
 li {display: inline-block;padding: 5px; background: lightsteelblue; color:whitesmoke}
@@ -10,4 +23,4 @@ th { text-align: left; color: darkblue;}
 td { padding-right: 0.8rem;}
 td:first-child {
   padding-right: 2rem;
-}
+} */

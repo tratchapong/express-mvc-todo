@@ -7,9 +7,43 @@
   <header>
     <%- include('./partials/header')  %> 
   </header>
-  <h3>All Jobs: <%= all %> </h3>
-  <h4>Done: <%= done %> </h4>
-  <h4>UnDone: <%= undone %> </h4>
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3 bg-primary text-light">
+            <h4 class="my-0 fw-normal">All Jobs</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="display-1 card-title pricing-card-title"><%= all %></h1>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">See..</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3 bg-success text-light">
+            <h4 class="my-0 fw-normal">Done Jobs</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="display-1 card-title pricing-card-title"><%= done %></h1>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">See..</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3 bg-warning">
+            <h4 class="my-0 fw-normal">UnDone Jobs</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="display-1 card-title pricing-card-title"><%= undone %></h1>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">See..</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
 </body>
 </html>

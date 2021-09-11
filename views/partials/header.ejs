@@ -1,8 +1,14 @@
-<h1>EJS : TodoList</h1>
-<nav>
-  <ul>
-    <li><a href="/todo">Home</a></li>
-    <li><a href="/todo/addForm">AddForm</a></li>
-  </ul>
+<div class="text-end">EJS : TodoList</div>
+<nav class="navbar navbar-expand navbar-dark rounded" style="background-color: #646777;">
+  <div class="container-fluid">
+    <div class="navbar-nav py-1">
+      <a href="/todo" class="nav-link">Home</a>
+      <a href="/todo/todoForm" class="nav-link">TodoForm</a>
+    </div>
+    <form class="d-flex">
+      <input class="form-control me-2" id="search" type="search" placeholder="Search" >
+      <button class="btn btn-outline-light text-white-50" type="submit">Search</button>
+    </form>
+  </div>
 </nav>
-<hr>
+<hr class="shadow bg-secondary">

@@ -8,14 +8,39 @@
     <%- include('./partials/header')  %> 
   </header>
   <h3>Edit data</h3>
-  
-  <form action="/todo/saveEdit" method="POST">
-    <input type="text" name="id" value=<%= editItem.id %> readonly >
-    <input type="text" name="list" value=<%= editItem.list %>  >
-    <input type="date" name="dueDate" value= <%= editItem.dueDate %>  >
-    <input type="checkbox" name="status" id="status" value="true" <%= editItem.status? 'checked':'' %>  >
-    <label for="status">Status</label>
-    <button>Save</button>
-  </form>
+ 
+  <form action="/todo/saveEdit" method="POST" >
+  <div class="input-group w-50 mt-3">
+    <span class="input-group-text">ID</span>
+    <input type="text" name="id" class="form-control w-25" value=<%=editItem.id %> readonly >
+  </div>
+  <div class="input-group my-2 w-70 ">
+    <span class="input-group-text">JOB</span>
+    <input type="text" name="list" class="form-control" value="<%= editItem.list %>" >
+    <div class="input-group-text">
+      <input class="form-check-input" type="checkbox" name="status" value="true" <%=editItem.status? 'checked':'' %> >
+    </div>
+    <span class="input-group-text <%=editItem.status? 'bg-success text-white' : '' %>" id="status-text">Complete</span>
+  </div>
+  <div class="input-group w-40 mb-3">
+    <span class="input-group-text">Due Date</span>
+    <input type="date" name="dueDate" class="form-control" value=<%=editItem.dueDate %> >
+  </div>
+    <button class="btn btn-primary col-1" type="submit">Save</button>
+    <button id="cancle" class="btn btn-secondary col-1" type="button">Cancel</button>
+</form>
+<script>
+  let elchk = document.querySelector('.form-check-input')
+  let eltext = document.querySelector('#status-text')
+  elchk.addEventListener('click', ()=>{
+    eltext.classList.toggle('bg-success')
+    eltext.classList.toggle('text-white')
+  })
+
+  let elCancle = document.querySelector('#cancle')
+  elCancle.addEventListener('click', ()=>{
+    window.history.back()
+  })
+</script>
 </body>
 </html>

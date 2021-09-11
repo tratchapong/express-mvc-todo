@@ -3,7 +3,7 @@ const todoRouter = express.Router()
 const todoController = require('../controllers/todoController')
 
 todoRouter.get('/', todoController.getAll )
-todoRouter.get('/addForm', todoController.addForm)
+todoRouter.get('/todoForm', todoController.todoForm)
 todoRouter.get('/edit/:id', todoController.editForm)
 todoRouter.post('/saveEdit', todoController.saveEdit)
 todoRouter.get('/delete/:id', todoController.delete )

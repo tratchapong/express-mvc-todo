@@ -7,27 +7,54 @@
     <header>
       <%- include('./partials/header')  %> 
     </header>
-
-    <form action="/todo" method="POST">
-      <input type="text" name="list" />
-      <input type="date" name="dueDate" id="duedate" />
-      <button>Add</button>
+    <form action="/todo" method="post">
+      <%- include ('./partials/inputs') %> 
     </form>
-    <br />
+    <hr class="shadow bg-secondary">
 
-    <table>
-      <tr>
-        <th>Job tobo</th>
-        <th>Due Date</th>
-      </tr>
+    <table class="table ms-3 fs-5 text-secondary">
+      <thead>
+        <tr>
+          <th>Job todo</th>
+          <th>Due Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
       <% todo.forEach(x => { %>
       <tr>
-        <td class=<%= x.status? 'done': '' %>  ><%= x.list %></td>
+        <td class=<%= x.status? 'text-success': '' %>  ><%= x.list %></td>
         <td><%= x.dueDate %> </td>
-        <td><a href="/todo/edit/<%= x.id %>">Edit</a></td>
-        <td><a href="/todo/delete/<%= x.id %>">Delete</a></td>
+        <td><a class="btn btn-outline-primary me-1" href="/todo/edit/<%= x.id %>">Edit</a><a class="btn btn-outline-danger " href="/todo/delete/<%= x.id %>">Delete</a></td>
       </tr>
       <% }) %>
+    </tbody>
     </table>
+    <% let op = JSON.stringify(todo[0]) %> 
+
+    <script>
+      // Example how to share varibles from EJS to Javascript
+      // use JSON.stringify to convert object to string
+      // then use JSON.parse for each key in javascript
+
+      let jdata = {}
+      jdata.id = "<%= JSON.parse(op).id %>"
+      jdata.list = "<%= JSON.parse(op).list %>"
+      jdata.dueDate = "<%= JSON.parse(op).dueDate %>"
+      jdata.status = "<%= JSON.parse(op).status %>"
+      console.log(jdata)
+
+      let jdata1 = {
+        id : "<%= JSON.parse(op).id %>",
+        list : "<%= JSON.parse(op).list %>",
+        dueDate : "<%= JSON.parse(op).dueDate %>",
+        status : "<%= JSON.parse(op).status %>"
+      }
+      console.log(jdata1)
+
+      let jdata2 = "<%= Object.entries(JSON.parse(op)) %>"
+      console.log (jdata2)
+     
+    </script>
   </body>
 </html>

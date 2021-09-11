@@ -24,7 +24,7 @@ exports.delete = async (req, res, next) => {
   res.render("todoform", { todo });
 };
 
-exports.addForm = async (req, res, next) => {
+exports.todoForm = async (req, res, next) => {
   let todo = await todoModel.findAll();
   res.render("todoform", { todo });
 };
@@ -40,11 +40,13 @@ exports.add = async (req, res, next) => {
 exports.editForm = async (req, res, next) => {
   let { id } = req.params;
   let editItem = await todoModel.findOne(id);
+  console.log(editItem)
   res.render("editform", { editItem });
 };
 
 exports.saveEdit = async (req, res, next) => {
   let body = req.body;
+  console.log(body)
   let saveItem = {
     id: body.id,
     list: body.list,
