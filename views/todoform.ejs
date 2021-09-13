@@ -28,32 +28,32 @@
         <td><a class="btn btn-outline-primary me-1" href="/todo/edit/<%= x.id %>">Edit</a><a class="btn btn-outline-danger " href="/todo/delete/<%= x.id %>">Delete</a></td>
       </tr>
       <% }) %>
-    </tbody>
+      </tbody>
     </table>
-    <% let op = JSON.stringify(todo[0]) %> 
 
+    <!-- <% let op = JSON.stringify(todo[0]) %>  -->
     <script>
       // Example how to share varibles from EJS to Javascript
       // use JSON.stringify to convert object to string
       // then use JSON.parse for each key in javascript
 
-      let jdata = {}
-      jdata.id = "<%= JSON.parse(op).id %>"
-      jdata.list = "<%= JSON.parse(op).list %>"
-      jdata.dueDate = "<%= JSON.parse(op).dueDate %>"
-      jdata.status = "<%= JSON.parse(op).status %>"
-      console.log(jdata)
+      // let jdata = {}
+      // jdata.id = "<%= JSON.parse(op).id %>"
+      // jdata.list = "<%= JSON.parse(op).list %>"
+      // jdata.dueDate = "<%= JSON.parse(op).dueDate %>"
+      // jdata.status = "<%= JSON.parse(op).status %>"
+      // console.log(jdata)
 
-      let jdata1 = {
-        id : "<%= JSON.parse(op).id %>",
-        list : "<%= JSON.parse(op).list %>",
-        dueDate : "<%= JSON.parse(op).dueDate %>",
-        status : "<%= JSON.parse(op).status %>"
-      }
-      console.log(jdata1)
+      // let jdata1 = {
+      //   id : "<%= JSON.parse(op).id %>",
+      //   list : "<%= JSON.parse(op).list %>",
+      //   dueDate : "<%= JSON.parse(op).dueDate %>",
+      //   status : "<%= JSON.parse(op).status %>"
+      // }
+      // console.log(jdata1)
 
-      let jdata2 = "<%= Object.entries(JSON.parse(op)) %>"
-      console.log (jdata2)
+      // let jdata2 = "<%= Object.entries(JSON.parse(op)) %>"
+      // console.log (jdata2)
      
     </script>
   </body>

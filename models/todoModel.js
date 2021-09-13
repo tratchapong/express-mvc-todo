@@ -44,6 +44,21 @@ class todoModel {
     await writeFileJSON(dbs, data)
     return data[r_id]
   }
+
+  static findSome = async (query) => {
+    console.log(query)
+    let data = await readFileJSON(dbs)
+    
+    if(Object.keys(query).length === 0) return data
+    console.log(query.status)
+    console.log(query?.status)
+    if(Object.keys(query).includes('status')) { 
+      return data.filter(x => x.status.toString() === query.status)
+    }
+    if(Object.keys(query).includes('search')) {
+      return data.filter( x => x.list.toLowerCase().includes(query.search.toLowerCase()) )
+    }
+  }
 }
 
 module.exports = todoModel

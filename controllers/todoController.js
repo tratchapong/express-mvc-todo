@@ -25,7 +25,8 @@ exports.delete = async (req, res, next) => {
 };
 
 exports.todoForm = async (req, res, next) => {
-  let todo = await todoModel.findAll();
+  console.log(req.query)
+  let todo = await todoModel.findSome(req.query);
   res.render("todoform", { todo });
 };
 
