@@ -1,6 +1,6 @@
 const path = require('path')
 const {v4:uuid} = require('uuid')
-const {readFileJSON, writeFileJSON} = require("../helper")
+const {readFileJSON, writeFileJSON} = require("./helper")
 
 const dbs = 'dbs/todo.json'
 
